@@ -1,13 +1,14 @@
 # BenchTeMP: A General Benchmark Library for Evaluating Temporal Graph Models
 
 ## Overview
-**BenchTeMP** is a general Benchmark Python Library for users to create and evaluate Temporal Graph models quickly and efficiently. 
-**BenchTeMP** provides users with the unified **original dataset preprocess function, Data Class, DataLoader, EdgeSampler, and Evaluator** for creating and evaluating your Temporal Graph model.
+**BenchTeMP** is a general Benchmark Python Library for users to evaluate Temporal Graph models quickly and efficiently. 
+**BenchTeMP** provides users with the unified **Dataset, DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, and Leaderboard.** for evaluating your Temporal Graph model.
 
-- The original datasets are [Here]() and the datasets preprocessed by BenchTeMP are [Here]().
-- The GitHub of BenchTeMP project is [Here]().
-- The source codes for evaluating existing Temporal Graph models based on BenchTeMP are [Here](). 
-- The leaderboards website created by our team for Temporal Graph models is [Here]().
+- The BenchTeMP PyPI Website is [Here](https://pypi.org/project/benchtemp/).
+- The GitHub of BenchTeMP project is [Here](https://github.com/qianghuangwhu/benchtemp).
+- The datasets are [coming soon]().
+- The source codes for evaluating existing Temporal Graph models based on BenchTeMP are [coming soon](). 
+- The leaderboards website for Temporal Graph models on both Link Prediction and Node Classification tasks is [coming soon]().
 
 ## Installation
 ### Requirements
@@ -17,12 +18,15 @@ Please ensure that you have installed the following dependencies:
 - pandas >= 1.2.0
 - sklearn >= 0.20.0
 
-### PyPI install
+### BenchTeMP PyPI install
+
 ```bash
 pip3 install benchtemp 
 ```
 
 ## Package Usage
+
+
 ### Datasets
 The datasets that have been preprocessed by BenchTeMP are [Here]().
 You can directly download the datasets and then put them into the directory './data'.
