@@ -1,14 +1,21 @@
-# BenchTeMP: A General Benchmark Library for Evaluating Temporal Graph Models
+# BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks
+
+## BenchTemp Framework
+<img src="img/framework.png" alt="Overview of BenchTemp" style="width:100%;" />
+
+## BenchTemp Pipeline
+<img src="img/pipeline.png" alt="BenchTemp Pipeline" style="width:100%;" />
 
 ## Overview
-**BenchTeMP** is a general Benchmark Python Library for users to evaluate Temporal Graph models quickly and efficiently. 
-**BenchTeMP** provides users with the unified **Dataset, DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, and Leaderboard.** for evaluating your Temporal Graph model.
+**BenchTemp** is a general Benchmark Python Library for users to evaluate Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
+**BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BCELoss, Optimizer,and Leaderboard** ) for evaluating Temporal Graph Neural Networks on both link prediction and node classification tasks.
 
-- The BenchTeMP PyPI Website is [Here](https://pypi.org/project/benchtemp/).
-- The GitHub of BenchTeMP project is [Here](https://github.com/qianghuangwhu/benchtemp).
-- The datasets are [coming soon]().
-- The source codes for evaluating existing Temporal Graph models based on BenchTeMP are [coming soon](). 
-- The leaderboards website for Temporal Graph models on both Link Prediction and Node Classification tasks is [coming soon]().
+- The BenchTemp PyPI Website is [Here](https://pypi.org/project/benchtemp/).
+- The GitHub of BenchTemp project is [Here](https://github.com/qianghuangwhu/benchtemp).
+- The datasets are [Here](https://drive.google.com/drive/folders/1HKSFGEfxHDlHuQZ6nK4SLCEMFQIOtzpz?usp=sharing).
+- The leaderboards website for Temporal Graph Neural Networks on both Link Prediction and Node Classification tasks is [Here](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/).
+- The source codes for evaluating existing Temporal Graph Neural Networks based on BenchTemp are [coming soon](). 
+
 
 ## Installation
 ### Requirements
@@ -18,21 +25,23 @@ Please ensure that you have installed the following dependencies:
 - pandas >= 1.2.0
 - sklearn >= 0.20.0
 
-### BenchTeMP PyPI install
+### BenchTemp PyPI install
 
 ```bash
 pip3 install benchtemp 
 ```
 
+
 ## Package Usage
 
 
 ### Datasets
-The datasets that have been preprocessed by BenchTeMP are [Here]().
+The datasets that have been preprocessed by BenchTemp are [Here](https://drive.google.com/drive/folders/1HKSFGEfxHDlHuQZ6nK4SLCEMFQIOtzpz?usp=sharing).
 You can directly download the datasets and then put them into the directory './data'.
 
-In addition, BenchTeMP provides data processing functions. you can download the original datasets [Here]() and then 
-use the functions provided by BenchTeMP for data preprocessing.
+In addition, BenchTemp provides data processing functions for you to preprocess yours TGNNs datasets. 
+<!-- you can download the original datasets [Here]() and then  -->
+<!-- use the functions provided by BenchTemp for data preprocessing. -->
 
 Function:
 **benchtemp.preprocessing.data.data_preprocess(data_name : str, bipartite : bool=True)**
@@ -60,7 +69,7 @@ data_preprocess("data_name", bipartite=False)
 
 Notes:
 
-For bipartite graph, BenchTeMP will factorize the source node index and 
+For bipartite graph, BenchTemp will factorize the source node index and 
 the destination node index, respectively. 
 ```python
 import pandas as pd
@@ -74,7 +83,7 @@ destinations, _ = pd.factorize(destinations)
 upper_u = sources.max + 1
 destinations = destinations + upper_u
 ```
-For non-bipartite graph, BenchTeMP will factorize the concatenation of source node array and 
+For non-bipartite graph, BenchTemp will factorize the concatenation of source node array and 
 the destination node array. 
 
 ```python
@@ -167,7 +176,7 @@ node_features, edge_features, full_data, train_data, val_data, test_data, new_no
 ```
 
 ### EdgeSampler
-BenchTeMP provides the unified
+BenchTemp provides the unified
 negative edge sampler with **seed** for Link Prediction task to  sample an equal amount of negatives to the positive interactions.
 
 Class:
@@ -293,9 +302,9 @@ test_auc = Evaluator.eval(pred_score, true_label)
 
 ## Call for Contributions
 
-**BenchTeMP** project is looking for contributors with 
-expertise and enthusiasm! If you have a desire to contribute to **BenchTeMP**, 
-please contact [BenchTeMP team](mailto:jonnyhuanghnu@gmail.com).
+**BenchTemp** project is looking for contributors with 
+expertise and enthusiasm! If you have a desire to contribute to **BenchTemp**, 
+please contact [BenchTemp team](mailto:jonnyhuanghnu@gmail.com).
 
 \item We release \sys, a general benchmark library for evaluating temporal graph models;
 
