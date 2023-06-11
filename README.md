@@ -41,7 +41,7 @@ You can directly download the datasets and then put them into the directory './d
 
 In addition, BenchTemp provides data processing functions for you to preprocess yours TGNNs datasets. 
 <!-- you can download the original datasets [Here]() and then  -->
-<!-- use the functions provided by BenchTemp for data preprocessing. -->
+<!-- use the functions provided by BenchTemp for data data. -->
 
 Function:
 **benchtemp.preprocessing.data.data_preprocess(data_name : str, bipartite : bool=True)**
@@ -56,15 +56,15 @@ Returns:
 - **ml_{data_name}_node.npy** - the node features of the Temporal Graph.
 
 Example:
-```python
-from benchtemp.preprocessing.data import data_preprocess
 
+```python
+import benchtemp as bt
 
 # If the dataset is bipartite graph, i.e. the user (source nodes) and the item (destination nodes) are of the same type.
-data_preprocess("data_name", bipartite=True)
+bt.data_preprocess("data_name", bipartite=True)
 
 # non-bipartite graph.
-data_preprocess("data_name", bipartite=False)
+bt.data_preprocess("data_name", bipartite=False)
 ```
 
 Notes:
@@ -127,7 +127,8 @@ Example:
 ```python
 import pandas as pd
 import numpy as np
-from benchtemp.utils import Data
+import benchtemp as bt
+
 
 graph_df = pd.read_csv("dataset_path")
 
@@ -138,7 +139,7 @@ labels = graph_df.label.values
 timestamps = graph_df.ts.values
 
 # For example, the full Temporal Graph of the dataset is full_data.
-full_data = Data(sources, destinations, timestamps, edge_idxs, labels)
+full_data = bt.Data(sources, destinations, timestamps, edge_idxs, labels)
 ```
 
 
@@ -169,10 +170,13 @@ Returns:
 - **unseen_nodes_num : int** - The number of unseen nodes of inductive setting.
 
 Example:
-```python
-from benchtemp.lp.readers import get_data
 
-node_features, edge_features, full_data, train_data, val_data, test_data, new_node_val_data, new_node_test_data, new_old_node_val_data, new_old_node_test_data, new_new_node_val_data, new_new_node_test_data, unseen_nodes_num = get_data(dataset_name, different_new_nodes_between_val_and_test=False, randomize_features=False)
+```python
+import benchtemp as bt
+
+data = bt.lp.DataLoader(dataset_path="./data/", dataset_name='mooc')
+
+node_features, edge_features, full_data, train_data, val_data, test_data, new_node_val_data, new_node_test_data, new_old_node_val_data, new_old_node_test_data, new_new_node_val_data, new_new_node_test_data, unseen_nodes_num = data.load()
 ```
 
 ### EdgeSampler
@@ -193,11 +197,12 @@ Returns:
 - **benchtemp.RandEdgeSampler**
 
 Example:
+
 ```python
-from benchtemp.lp.sampler import RandEdgeSampler
+import benchtemp as bt
 
 # For example, if you are training , you should create a training  RandEdgeSampler based on the training dataset.
-train_rand_sampler = RandEdgeSampler(train_data.sources, train_data.destinations)
+train_rand_sampler = bt.lp.RandEdgeSampler(train_data.sources, train_data.destinations)
 
 ...
 for epoch in range(args.epochs):
@@ -243,10 +248,10 @@ Returns:
 
 Example:
 ```python
-from benchtemp.utils import EarlyStopMonitor
+import benchtemp as bt
 
 ...
-early_stopper = EarlyStopMonitor(max_round=args.patience)
+early_stopper = bt.EarlyStopMonitor(max_round=args.patience)
 for epoch in range(args.epochs):
     ...
     val_ap = model(val_datasets)
@@ -275,28 +280,28 @@ Returns:
 Example:
 
 ```python
-from benchtemp.utils import Evaluator
+import benchtemp as bt
 
 # For example, Link prediction task. Evaluation Metrics: AUC, AP.
-evaluator = Evaluator("LP")
+evaluator = bt.Evaluator("LP")
 
 ...
 # test data
 pred_score = model(test_data)
-test_auc, test_ap = Evaluator.eval(pred_score, true_label)
+test_auc, test_ap = evaluator.eval(pred_score, true_label)
 ...
 ```
 
 ```python
-from benchtemp.utils import Evaluator
+import benchtemp as bt
 
 # For example, Node Classification task. Evaluation Metrics: AUC.
-evaluator = Evaluator("NC")
+evaluator = bt.Evaluator("NC")
 
 ...
 # test data
 pred_score = model(test_data)
-test_auc = Evaluator.eval(pred_score, true_label)
+test_auc = evaluator.eval(pred_score, true_label)
 ...
 ```
 
