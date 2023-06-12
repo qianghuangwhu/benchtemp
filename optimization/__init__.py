@@ -1,2 +1,0 @@
-from optimizer import BenchTempOptimizer
-from loss import BenchTempLoss
