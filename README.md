@@ -63,11 +63,12 @@ Example:
 ```python
 import benchtemp as bt
 
+processor = bt.DataPreprocessor(data_path="./data/", data_name="mooc")
 # If the dataset is bipartite graph, i.e. the user (source nodes) and the item (destination nodes) are of the same type.
-bt.data_preprocess("data_name", bipartite=True)
+processor.data_preprocess(bipartite=True)
 
 # non-bipartite graph.
-bt.data_preprocess("data_name", bipartite=False)
+processor.data_preprocess(bipartite=False)
 ```
 
 Notes:
