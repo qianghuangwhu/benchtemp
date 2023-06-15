@@ -6,6 +6,10 @@
 ## BenchTemp Pipeline
 <img src="img/pipeline.png" alt="BenchTemp Pipeline" style="width:100%;" />
 
+## BenchTemp Modules
+<img src="img/modules.png" alt="BenchTemp Pipeline" style="width:100%;" />
+
+
 ## Overview
 **BenchTemp** is a general Benchmark Python Library for users to evaluate Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
 **BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BCELoss, Optimizer,and Leaderboard** ) for evaluating Temporal Graph Neural Networks on both link prediction and node classification tasks.
