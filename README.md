@@ -1,14 +1,19 @@
 # BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks
 
 ## BenchTemp Framework
+<div align="center">
 <img src="img/framework.png" alt="Overview of BenchTemp" style="width:100%;" />
+</div>
 
 ## BenchTemp Pipeline
+<div align="center">
 <img src="img/pipeline.png" alt="BenchTemp Pipeline" style="width:100%;" />
+</div>
 
 ## BenchTemp Modules
-<img src="img/modules.png" alt="BenchTemp Pipeline" style="width:100%;" />
-
+<div align="center">
+<img src="img/modules.png" alt="BenchTemp Pipeline" style="width:70%;" />
+</div>
 
 ## Overview
 **BenchTemp** is a general Benchmark Python Library for users to evaluate Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
