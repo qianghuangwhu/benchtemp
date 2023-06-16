@@ -324,11 +324,5 @@ test_auc = evaluator.eval(pred_score, true_label)
 expertise and enthusiasm! If you have a desire to contribute to **BenchTemp**, 
 please contact [BenchTemp team](mailto:jonnyhuanghnu@gmail.com).
 
-\item We release \sys, a general benchmark library for evaluating temporal graph models;
 
-\item We provides unified benckmark temporal graph datasets processed by \sys;
-
-\item We benchmark existing temporal graph models based on \sys  for robust developments and analysis the performance of models in detail;
-
-\item We relsed the leaderboards for temporal graph models.
 
