@@ -31,7 +31,7 @@
     - [*lp.RandEdgeSampler*](#lprandedgesampler)
     - [*nc.DataLoader*](#ncdataloader)
     - [*EarlyStopMonitor*](#earlystopmonitor)
-    - [Evaluator](#evaluator)
+    - [*Evaluator*](#evaluator)
   - [Call for Contributions](#call-for-contributions)
 ---
 ## Overview
@@ -446,7 +446,7 @@ for epoch in range(args.epochs):
 
 <br>
 
-### Evaluator
+### *Evaluator*
 
 <br>
 
