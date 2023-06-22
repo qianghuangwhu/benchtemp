@@ -504,8 +504,11 @@ pred_score = model(test_data)
 test_auc = evaluator.eval(pred_score, true_label)
 ...
 ```
+---
 
 ## Call for Contributions
+
+<br>
 
 BenchTemp project is looking for contributors with 
 expertise and enthusiasm! If you have the desire to contribute to BenchTemp, 
