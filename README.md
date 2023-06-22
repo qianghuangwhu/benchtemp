@@ -6,7 +6,7 @@
 [![General badge](https://img.shields.io/badge/Gmail-johnhuang-yellow.svg)](mailto:jonnyhuanghnu@gmail.com)
 [![General badge](https://img.shields.io/badge/Wuhan-University-deepgreen.svg)]()
 [![General badge](https://img.shields.io/badge/eBay-deepgreen.svg)]()
-[![General badge](https://img.shields.io/badge/ETH-Zürich-green.svg)]()
+[![General badge](https://img.shields.io/badge/ETH-Zürich-deepgreen.svg)]()
 
 
 
