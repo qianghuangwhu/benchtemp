@@ -30,6 +30,7 @@
 **BenchTemp** is a general Benchmark Python Library for evaluating Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
 **BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BCELoss, Optimizer,and Leaderboard** ) for evaluating Temporal Graph Neural Networks on both link prediction task and node classification task.
 
+- The paper for this open source project is <a href="https://openreview.net/forum?id=rnZm2vQq31" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
 - The BenchTemp PyPI Website is <a href="https://pypi.org/project/benchtemp/" target="_blank">Here</a>.
 
 - The GitHub of BenchTemp project is <a href="https://github.com/qianghuangwhu/benchtemp" target="_blank">Here</a>. 
