@@ -1,8 +1,18 @@
 # BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)](https://pypi.org/project/benchtemp/)
+[![General badge](https://img.shields.io/badge/PyPI-v1.1.1-green.svg)]([mailto:jonnyhuanghnu@gmail.com](https://pypi.org/project/benchtemp/))
+[![General badge](https://img.shields.io/badge/BenchTemp-Team-purple.svg)](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/)
+[![General badge](https://img.shields.io/badge/Gmail-johnhuang-yellow.svg)](mailto:jonnyhuanghnu@gmail.com)
+[![General badge](https://img.shields.io/badge/Wuhan-University-deepgreen.svg)]()
+[![General badge](https://img.shields.io/badge/eBay-deepgreen.svg)]()
+[![General badge](https://img.shields.io/badge/ETH-Zürich-green.svg)]()
 
+
+
+
+
+<!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
 ## Table of Contents
 - [BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks](#benchtemp-a-general-benchmark-for-evaluating-temporal-graph-neural-networks)
@@ -19,8 +29,8 @@
     - [*TemporalGraph*](#temporalgraph)
     - [*lp.DataLoader*](#lpdataloader)
     - [*lp.RandEdgeSampler*](#lprandedgesampler)
-    - [(2) Node Classification task](#2-node-classification-task)
-    - [EarlyStopMonitor](#earlystopmonitor)
+    - [*nc.DataLoader*](#ncdataloader)
+    - [*EarlyStopMonitor*](#earlystopmonitor)
     - [Evaluator](#evaluator)
   - [Call for Contributions](#call-for-contributions)
 ---
@@ -100,37 +110,39 @@ In addition, BenchTemp provides *DataPreprocessor* class for you to preprocess y
 <!-- use the functions provided by BenchTemp for data data. -->
 
 *Class*:
-
-**benchtemp.DataPreprocessor**(*data_path : str, data_name : str*)
+```python
+benchtemp.DataPreprocessor(data_path: str, data_name: str)
+```
 
 *Args*:
 
-- *data_name : str* - the path of the dataset.
-- *data_name : str* - the name of the dataset.
+- *data_name: str* - The path of the dataset.
+- *data_name: str* - The name of the dataset.
 
 
 *Function*:
-
-**DataPreprocessor.data_preprocess**(*bipartite: bool*)
+```python
+DataPreprocessor.data_preprocess(bipartite: bool)
+```
 
 *Args*:
 
-- *bipartite : bool* - Whether the Temporal Graph is bipartite graph.
+- *bipartite: bool* - Whether the Temporal Graph is bipartite graph.
 
 *Returns*:
 
-1. *ml_{data_name}.csv* - the csv file of the Temporal Graph.
+1. *ml_{data_name}.csv* - The csv file of the Temporal Graph.
 This file have five columns with properties:
-   - '*u*': the id of the user.
-   - '*i*': the id of the item.
-   - '*ts*': the timestamp of the interaction (edge) between the user and the item.
-   - '*label*': the label of the interaction (edge).
-   - '*idx*': the index of the interaction (edge).
+   - '*u*': The id of the user.
+   - '*i*': The id of the item.
+   - '*ts*': The timestamp of the interaction (edge) between the user and the item.
+   - '*label*': The label of the interaction (edge).
+   - '*idx*': The index of the interaction (edge).
 
-1. *ml_{data_name}.npy* - the edge features corresponding to the interactions (edges) in the the Temporal Graph..
+1. *ml_{data_name}.npy* - The edge features corresponding to the interactions (edges) in the the Temporal Graph..
 
 
-3. *ml_{data_name}_node.npy* - the initialization node features of the Temporal Graph.
+3. *ml_{data_name}_node.npy* - The initialization node features of the Temporal Graph.
 
 Example:
 
@@ -188,19 +200,16 @@ interactions $I_{r}=(u_{r}, i_{r}, t_{r}, e_{r})$, $0 \leq t_{1} \leq  \dots  t_
 with edge feature $e_{r}$.
 
 *Class*:
-
-**TemporalGraph**(*sources : numpy.ndarray,
-destinations : numpy.ndarray,
-timestamps : numpy.ndarray,
-edge_idxs : numpy.ndarray,
-labels : numpy.ndarray*)
+```python
+TemporalGraph(sources: numpy.array, destinations: numpy.array, timestamps: numpy.array, edge_idxs: numpy.array, labels: numpy.array)
+```
 
 *Args*:
-- *sources : numpy.ndarray* - Array of sources of Temporal Graph edges.
-- *destinations : numpy.ndarray* - Array of destinations of Temporal Graph edges.
-- *timestamps : numpy.ndarray* - Array of timestamps of Temporal Graph edges.
-- *edge_idxs : numpy.ndarray* - Array of edge IDs of Temporal Graph edges.
-- *labels : numpy.ndarray* - Array of labels of Temporal Graphe dges.
+- *sources: numpy.array* - Array of sources of Temporal Graph edges.
+- *destinations: numpy.array* - Array of destinations of Temporal Graph edges.
+- *timestamps: numpy.array* - Array of timestamps of Temporal Graph edges.
+- *edge_idxs: numpy.array* - Array of edge IDs of Temporal Graph edges.
+- *labels: numpy.array* - Array of labels of Temporal Graphe dges.
 
 *Returns*: 
 - *benchtemp.TemporalGraph*. A Temporal Graph.
@@ -246,36 +255,39 @@ DataLoader further generates three inductive test sets from the transductive tes
   - **Inductive New-Old** - selects edges between a seen node and an unseen node.
   - **Inductive New-New** - selects edges between two unseen nodes. 
 
-*class*:
+*Class*:
 
-**lp.DataLoader**(*dataset_path: str, dataset_name: str, different_new_nodes_between_val_and_test: bool,
-                 randomize_features: bool*)
+```python
+lp.DataLoader(dataset_path: str, dataset_name: str, different_new_nodes_between_val_and_test: bool, randomize_features: bool)
+```
 
 *Args*:
 
-- *dataset_path: str* - the path of the dataset.
-- *dataset_name: str* - the name of dataset.
-- *different_new_nodes_between_val_and_test: bool* - new nodes are between validation set and test set.
-- *randomize_features: str* - random initialization of node features. 
+- *dataset_path: str* - The path of the dataset.
+- *dataset_name: str* - The name of dataset.
+- *different_new_nodes_between_val_and_test: bool* - The new nodes are between validation set and test set.
+- *randomize_features: str* - Random initialization of node features. 
 
 *Function*:
 
-**lp.DataLoader.load()**
+```python
+lp.DataLoader.load()
+```
 
-Returns:
-- *node_features : numpy.ndarray* - Array of the Node Features of the Temporal Graph. 
-- *edge_features : numpy.ndarray* - Array of the Edge Features of the Temporal Graph.
-- *full_data : benchtemp.TemporalGraph* - Full Temporal Graph dataset. 
-- *train_data : benchtemp.TemporalGraph* - The training set. 
-- *val_data : benchtemp.TemporalGraph* - The validation set.
-- *test_data : benchtemp.TemporalGraph*  - The **Transductive** test set.
-- *new_node_val_data : benchtemp.TemporalGraph* - The **Inductive**  validation set.
-- *new_node_test_data : benchtemp.TemporalGraph* - The **Inductive**  test set.
-- *new_old_node_val_data : benchtemp.TemporalGraph* - The **Inductive New-Old** validation set.
-- *new_old_node_test_data : benchtemp.TemporalGraph* - The **Inductive New-Old**  test set.
-- *new_new_node_val_data : benchtemp.TemporalGraph* - The **Inductive New-New** validation set.
-- *new_new_node_test_data : benchtemp.TemporalGraph* - The **Inductive New-New** test set.
-- *unseen_nodes_num : int* - The number of unseen nodes in inductive setting.
+*Returns*:
+- *node_features: numpy.array* - Array of the Node Features of the Temporal Graph. 
+- *edge_features: numpy.array* - Array of the Edge Features of the Temporal Graph.
+- *full_data: benchtemp.TemporalGraph* - Full Temporal Graph dataset. 
+- *train_data: benchtemp.TemporalGraph* - The training set. 
+- *val_data: benchtemp.TemporalGraph* - The validation set.
+- *test_data: benchtemp.TemporalGraph*  - The **Transductive** test set.
+- *new_node_val_data: benchtemp.TemporalGraph* - The **Inductive**  validation set.
+- *new_node_test_data: benchtemp.TemporalGraph* - The **Inductive**  test set.
+- *new_old_node_val_data: benchtemp.TemporalGraph* - The **Inductive New-Old** validation set.
+- *new_old_node_test_data: benchtemp.TemporalGraph* - The **Inductive New-Old**  test set.
+- *new_new_node_val_data: benchtemp.TemporalGraph* - The **Inductive New-New** validation set.
+- *new_new_node_test_data: benchtemp.TemporalGraph* - The **Inductive New-New** test set.
+- *unseen_nodes_num: int* - The number of unseen nodes in inductive setting.
 
 Example:
 
@@ -294,20 +306,31 @@ node_features, edge_features, full_data, train_data, val_data, test_data, new_no
 <br>
 
 BenchTemp provides the unified
-negative edge sampler with **a seed** for Link Prediction task to  sample an equal amount of negatives to the positive interactions.
+negative edge sampler class with a **seed** named RandEdgeSampler  for Link Prediction task to  sample an equal amount of negatives to the positive interactions.
 
-Class:
+*Class*:
 
-**RandEdgeSampler(src_list : numpy.ndarray, dst_list : numpy.ndarray, seed : int =None)**
+```python
+RandEdgeSampler(src_list: numpy.array, dst_list: numpy.array, seed: int)
+```
 
-Args:
-- **src_list : numpy.ndarray** - the list of source nodes.
-- **dst_list : numpy.ndarray** - the list of destination nodes.
-- **seed : numpy.ndarray** - seed of random.
+*Args*:
+- *src_list: numpy.array* - Array of source nodes.
+- *dst_list: numpy.array* - Array of destination nodes.
+- *seed: numpy.array* - The seed of random.
 
-Returns: 
+*Function*: 
 
-- **benchtemp.RandEdgeSampler**
+```python
+RandEdgeSampler.sample(size : int)
+```
+
+*Args*:
+- *size : int* - The size of the sampling negative edges.
+
+*Returns*:
+- *src_list: numpy.array* - Array of source nodes of the sampling negative edges.
+- *dst_list: numpy.array* - Array of destination nodes of the sampling negative edges.
 
 Example:
 
@@ -321,43 +344,88 @@ train_rand_sampler = bt.lp.RandEdgeSampler(train_data.sources, train_data.destin
 for epoch in range(args.epochs):
     ...
     # sample an equal amount of negatives to the positive interactions.
+    size = len(train_data)
     _, negatives_batch = train_rand_sampler.sample(size)
     ...
 ...
 ```
-### (2) Node Classification task
-Function:
+
+---
+
+<br>
+
+### *nc.DataLoader*
+
+<br>
+
+The DataLoader class for node classification tasks. The DataLoader module sorts edges and splits the input dataset (70\%-15\%-15\%) according to edge timestamps.
+
+*Class*:
+
+```python
+nc.DataLoader(dataset_path: str, dataset_name: str, use_validation: bool)
+```
+
+*Args*:
+- *dataset_path: str* - The path of the dataset.
+- *dataset_name: str* - The name of the dataset.
+- *use_validation: bool* - Whether use validation dataset or not.
+
+*Function*:
+
+```python
+nc.DataLoader.load()
+``` 
+
+*Returns*:
+- *node_features: numpy.array* - Array of the Node Features of the Temporal Graph. 
+- *edge_features: numpy.array* - Array of the Edge Features of the Temporal Graph.
+- *full_data: benchtemp.TemporalGraph* - Full Temporal Graph dataset for Node Classification task. 
+- *train_data: benchtemp.TemporalGraph* - The training set for Node Classification task. 
+- *val_data: benchtemp.TemporalGraph* - The validation set for Node Classification task.
+- *test_data: benchtemp.TemporalGraph*  - The test set for Node Classification task.
+
+Example:
+```python
+import benchtemp as bt
+
+data = bt.nc.DataLoader(dataset_path="./data/", dataset_name='mooc', use_validation=True)
+
+node_features, edge_features, full_data, train_data, val_data, test_data = data.load()
+```
+
+---
+<br>
+
+### *EarlyStopMonitor*
+
+<br>
+
+BenchTemp provides a unified EarlyStopMonitor to improve training efficiency and save resources.
 
 
 
-**benchtemp.nc.readers.get_data_node_classification((dataset_name : str, use_validation : bool=False))** 
+*Class*:
+```python
+EarlyStopMonitor(max_round: int, higher_better: bool, tolerance: float)
+```
+*Args*:
+- *max_round: int* - The number of rounds for early stop.
+- *higher_better: bool* - The higher the value, the better the performance.
+- *tolerance: float* - The tolerance of the EarlyStopMonitor.
 
-Args:
-- dataset_name : str - The name of the dataset. The dataset file (.csv file of the Temporal Graph, .npy file of the node features and .npy file of the edge features) should be in "./data" directory.
-- use_validation : bool - Whether use validation dataset or not.
+*Function*:
+```python
+EarlyStopMonitor.early_stop_check(curr_val:float)
+```
+*Args*:
 
-Returns:
-- **node_features : numpy.ndarray** - Array of the Node Features of the Temporal Graph. 
-- **edge_features : numpy.ndarray** - Array of the Edge Features of the Temporal Graph.
-- **full_data : benchtemp.Data** - Full Temporal Graph dataset for Node Classification task. 
-- **train_data : benchtemp.Data** - The training Temporal Graph dataset for Node Classification task. 
-- **val_data : benchtemp.Data** - The validation Temporal Graph dataset for Node Classification task.
-- **test_data : benchtemp.Data**  - The test Temporal Graph dataset for Node Classification task.
+- *curr_val: float* - The value to check for early stop.
 
+*Returns*:
 
-
-### EarlyStopMonitor
-Class:
-
-**EarlyStopMonitor(max_round=3, higher_better=True, tolerance=1e-10)**
-
-Args:
-- **max_round : int** - the maximum number of rounds of EarlyStopMonitor.
-- **higher_better : bool** - better the performance.
-- **tolerance : float** - the tolerance of the EarlyStopMonitor.
-
-Returns:
-- **benchtemp.EarlyStopMonitor**
+- *True* - If the value matches the setting of the EarlyStopMonitor.
+- *False* - If the value does not match the setting of the EarlyStopMonitor.
 
 Example:
 ```python
@@ -374,21 +442,40 @@ for epoch in range(args.epochs):
 ...
 ```
 
+---
+
+<br>
+
 ### Evaluator
 
-**Link Prediction** Evaluation Metrics  are **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** and **average precision (AP)**
+<br>
 
-**Node Classification** Evaluation Metric is **Area Under the Receiver Operating Characteristic Curve (ROC AUC)**
 
-Class: 
+Different evaluation metrics are available, including Area Under the Receiver Operating Characteristic Curve (ROC AUC) and Average Precision (AP). Usually, metrics *Area Under the Receiver Operating Characteristic Curve (ROC AUC)* and *average precision (AP)* are for the link prediction task, while metrics *AUC* is for the node classification task.
+<!-- **Link Prediction** Evaluation Metrics  are **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** and **average precision (AP)**
 
-**Evaluator(task_name: str = "LP")**
+**Node Classification** Evaluation Metric is **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** -->
 
-Args:
-- task_name : str  - the name of the task, choice in **["LP", "NC"]**.
+*Class*: 
+```python
+Evaluator(task_name: str)
+```
 
-Returns:
-- **benchtemp.Evaluator**
+*Args*:
+- *task_name: str*  - the name of the task, choice in **["LP", "NC"]**, LP for the link prediction task and NC for the node classification task.
+
+*Function*:
+```python
+Evaluator.eval(pred_score: numpy.array, true_label: numpy.array)
+```
+*Args*:
+- *pred_score: numpy.array*- Array of prediction scores.
+- *true_label: numpy.array* - Array of true labels.
+
+*Returns*:
+
+- *AUC: float* - the value of the AUC.
+- *AP: float* - the value of the AP.
 
 Example:
 
@@ -420,9 +507,13 @@ test_auc = evaluator.eval(pred_score, true_label)
 
 ## Call for Contributions
 
-**BenchTemp** project is looking for contributors with 
-expertise and enthusiasm! If you have a desire to contribute to **BenchTemp**, 
-please contact [BenchTemp team](mailto:jonnyhuanghnu@gmail.com).
+BenchTemp project is looking for contributors with 
+expertise and enthusiasm! If you have the desire to contribute to BenchTemp, 
+please contact [BenchTemp team](mailto:jonnyhuanghnu@gmail.com). Contributions and issues from the community are eagerly welcomed, with which
+we can together push forward the TGNN research.
 
+<div align="center">
 
+[![General badge](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/qianghuangwhu)
+</div>
 
