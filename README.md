@@ -37,7 +37,7 @@
 <br>
 
 **BenchTemp** is a general Benchmark Python Library for evaluating Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
-**BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BCELoss, Optimizer,and Leaderboard** ) for evaluating Temporal Graph Neural Networks on both link prediction task and node classification task.
+**BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BenchTempLoss, BenchTempOptimizer,and Leaderboard** ) for evaluating Temporal Graph Neural Networks on both link prediction task and node classification task.
 
 - The paper for this open source project is <a href="https://openreview.net/forum?id=rnZm2vQq31" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
 - The BenchTemp PyPI Website is <a href="https://pypi.org/project/benchtemp/" target="_blank">Here</a>.
@@ -46,7 +46,7 @@
 
 - The datasets are <a href="https://drive.google.com/drive/folders/1HKSFGEfxHDlHuQZ6nK4SLCEMFQIOtzpz?usp=sharing" target="_blank">Here</a>. 
 
-- The leaderboards website for Temporal Graph Neural Networks on both Link Prediction and Node Classification tasks is <a href="https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/" target="_blank">Here</a>.
+- The leaderboards website for Temporal Graph Neural Networks on both link prediction task and node classification task is <a href="https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/" target="_blank">Here</a>.
 - The source codes for evaluating existing Temporal Graph Neural Networks based on BenchTemp are <a href="" target="_blank">coming soon</a>.
 
 ---
@@ -305,7 +305,7 @@ node_features, edge_features, full_data, train_data, val_data, test_data, new_no
 <br>
 
 BenchTemp provides the unified
-negative edge sampler class with a **seed** named RandEdgeSampler  for Link Prediction task to  sample an equal amount of negatives to the positive interactions.
+negative edge sampler class with a **seed** named RandEdgeSampler  for link prediction task to  sample an equal amount of negatives to the positive interactions.
 
 *Class*:
 
@@ -357,7 +357,7 @@ for epoch in range(args.epochs):
 
 <br>
 
-The DataLoader class for node classification tasks. The DataLoader module sorts edges and splits the input dataset (70\%-15\%-15\%) according to edge timestamps.
+The DataLoader class for the node classification task. The DataLoader module sorts edges and splits the input dataset (70\%-15\%-15\%) according to edge timestamps.
 
 *Class*:
 
@@ -379,10 +379,10 @@ nc.DataLoader.load()
 *Returns*:
 - *node_features: numpy.array* - Array of the Node Features of the Temporal Graph. 
 - *edge_features: numpy.array* - Array of the Edge Features of the Temporal Graph.
-- *full_data: benchtemp.TemporalGraph* - Full Temporal Graph dataset for Node Classification task. 
-- *train_data: benchtemp.TemporalGraph* - The training set for Node Classification task. 
-- *val_data: benchtemp.TemporalGraph* - The validation set for Node Classification task.
-- *test_data: benchtemp.TemporalGraph*  - The test set for Node Classification task.
+- *full_data: benchtemp.TemporalGraph* - Full Temporal Graph dataset for node classification task. 
+- *train_data: benchtemp.TemporalGraph* - The training set for node classification task. 
+- *val_data: benchtemp.TemporalGraph* - The validation set for node classification task.
+- *test_data: benchtemp.TemporalGraph*  - The test set for node classification task.
 
 Example:
 ```python
@@ -451,9 +451,9 @@ for epoch in range(args.epochs):
 
 
 Different evaluation metrics are available, including Area Under the Receiver Operating Characteristic Curve (ROC AUC) and Average Precision (AP). Usually, metrics *Area Under the Receiver Operating Characteristic Curve (ROC AUC)* and *average precision (AP)* are for the link prediction task, while metrics *AUC* is for the node classification task.
-<!-- **Link Prediction** Evaluation Metrics  are **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** and **average precision (AP)**
+<!-- **link prediction** Evaluation Metrics  are **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** and **average precision (AP)**
 
-**Node Classification** Evaluation Metric is **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** -->
+**node classification** Evaluation Metric is **Area Under the Receiver Operating Characteristic Curve (ROC AUC)** -->
 
 *Class*: 
 ```python
@@ -494,7 +494,7 @@ test_auc, test_ap = evaluator.eval(pred_score, true_label)
 ```python
 import benchtemp as bt
 
-# For example, Node Classification task. Evaluation Metrics: AUC.
+# For example, node classification task. Evaluation Metrics: AUC.
 evaluator = bt.Evaluator("NC")
 
 ...
