@@ -4,6 +4,7 @@
 [![General badge](https://img.shields.io/badge/PyPI-v1.1.1-green.svg)]([mailto:jonnyhuanghnu@gmail.com](https://pypi.org/project/benchtemp/))
 [![General badge](https://img.shields.io/badge/BenchTemp-Team-purple.svg)](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/)
 [![General badge](https://img.shields.io/badge/Gmail-johnhuang-yellow.svg)](mailto:jonnyhuanghnu@gmail.com)
+[![General badge](https://img.shields.io/badge/Twitter-johnhuang-blue.svg)](https://twitter.com/qianghuangwhu)
 [![General badge](https://img.shields.io/badge/Wuhan-University-deepgreen.svg)]()
 [![General badge](https://img.shields.io/badge/eBay-deepgreen.svg)]()
 [![General badge](https://img.shields.io/badge/ETH-Zürich-deepgreen.svg)]()
@@ -322,11 +323,11 @@ RandEdgeSampler(src_list: numpy.array, dst_list: numpy.array, seed: int)
 *Function*: 
 
 ```python
-RandEdgeSampler.sample(size : int)
+RandEdgeSampler.sample(size: int)
 ```
 
 *Args*:
-- *size : int* - The size of the sampling negative edges.
+- *size: int* - The size of the sampling negative edges.
 
 *Returns*:
 - *src_list: numpy.array* - Array of source nodes of the sampling negative edges.
@@ -514,9 +515,4 @@ BenchTemp project is looking for contributors with
 expertise and enthusiasm! If you have the desire to contribute to BenchTemp, 
 please contact [BenchTemp team](mailto:jonnyhuanghnu@gmail.com). Contributions and issues from the community are eagerly welcomed, with which
 we can together push forward the TGNN research.
-
-<div align="center">
-
-[![General badge](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/qianghuangwhu)
-</div>
 
