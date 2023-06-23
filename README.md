@@ -112,7 +112,7 @@ In addition, BenchTemp provides *DataPreprocessor* class for you to preprocess y
 
 *Class*:
 ```python
-benchtemp.DataPreprocessor(data_path: str, data_name: str)
+DataPreprocessor(data_path: str, data_name: str)
 ```
 
 *Args*:
