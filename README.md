@@ -3,11 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![General badge](https://img.shields.io/badge/PyPI-v1.1.1-green.svg)]([mailto:jonnyhuanghnu@gmail.com](https://pypi.org/project/benchtemp/))
 [![General badge](https://img.shields.io/badge/BenchTemp-Team-purple.svg)](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/)
-[![General badge](https://img.shields.io/badge/Gmail-johnhuang-yellow.svg)](mailto:jonnyhuanghnu@gmail.com)
-[![General badge](https://img.shields.io/badge/Twitter-johnhuang-blue.svg)](https://twitter.com/qianghuangwhu)
+[![General badge](https://img.shields.io/badge/Gmail-BenchTemp-yellow.svg)](mailto:jonnyhuanghnu@gmail.com)
 [![General badge](https://img.shields.io/badge/Wuhan-University-deepgreen.svg)]()
 [![General badge](https://img.shields.io/badge/eBay-deepgreen.svg)]()
 [![General badge](https://img.shields.io/badge/ETH-Zürich-deepgreen.svg)]()
+<!-- [![General badge](https://img.shields.io/badge/Twitter-BenchTemp-blue.svg)](https://twitter.com/qianghuangwhu) -->
 
 
 
@@ -16,22 +16,22 @@
 <!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
 ## Table of Contents
-- [Overview](#overview)
-- [BenchTemp Framework](#benchtemp-framework)
-- [BenchTemp Pipeline](#benchtemp-pipeline)
-- [BenchTemp Modules](#benchtemp-modules)
-- [Installation](#installation)
-  - [Requirements](#requirements)
-  - [PyPI install](#pypi-install)
-- [BenchTemp Reference](#benchtemp-reference)
-  - [*DataPreprocessor*](#datapreprocessor)
-  - [*TemporalGraph*](#temporalgraph)
-  - [*lp.DataLoader*](#lpdataloader)
-  - [*lp.RandEdgeSampler*](#lprandedgesampler)
-  - [*nc.DataLoader*](#ncdataloader)
-  - [*EarlyStopMonitor*](#earlystopmonitor)
-  - [*Evaluator*](#evaluator)
-- [Call for Contributions](#call-for-contributions)
+  - [Overview](#overview)
+  - [BenchTemp Framework](#benchtemp-framework)
+  - [BenchTemp Pipeline](#benchtemp-pipeline)
+  - [BenchTemp Modules](#benchtemp-modules)
+  - [Installation](#installation)
+    - [Requirements](#requirements)
+    - [PyPI install](#pypi-install)
+  - [BenchTemp Reference](#benchtemp-reference)
+    - [*DataPreprocessor*](#datapreprocessor)
+    - [*TemporalGraph*](#temporalgraph)
+    - [*lp.DataLoader*](#lpdataloader)
+    - [*lp.RandEdgeSampler*](#lprandedgesampler)
+    - [*nc.DataLoader*](#ncdataloader)
+    - [*EarlyStopMonitor*](#earlystopmonitor)
+    - [*Evaluator*](#evaluator)
+  - [Call for Contributions](#call-for-contributions)
 ---
 ## Overview
 <br>
