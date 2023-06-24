@@ -117,7 +117,7 @@ DataPreprocessor(data_path: str, data_name: str)
 
 *Args*:
 
-- *data_name: str* - The path of the dataset.
+- *data_path: str* - The path of the dataset.
 - *data_name: str* - The name of the dataset.
 
 
