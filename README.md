@@ -32,7 +32,16 @@
     - [*EarlyStopMonitor*](#earlystopmonitor)
     - [*Evaluator*](#evaluator)
   - [Call for Contributions](#call-for-contributions)
+
 ---
+
+## <center><span style="color:red">*News!!!*</span>
+</center>
+
+- 25/6/2023 - *We have updated the reference of BenchTemp on github.*
+
+---
+
 ## Overview
 <br>
 
@@ -128,11 +137,11 @@ DataPreprocessor.data_preprocess(bipartite: bool)
 
 *Args*:
 
-- *bipartite: bool* - Whether the Temporal Graph is bipartite graph.
+- *bipartite: bool* - Whether the Temporal Graph is a bipartite graph (*Heterogeneous* or *Homogeneous*).
 
 *Returns*:
 
-1. *ml_{data_name}.csv* - The csv file of the Temporal Graph.
+- *ml_{data_name}.csv* - The csv file of the Temporal Graph.
 This file have five columns with properties:
    - '*u*': The id of the user.
    - '*i*': The id of the item.
@@ -140,10 +149,10 @@ This file have five columns with properties:
    - '*label*': The label of the interaction (edge).
    - '*idx*': The index of the interaction (edge).
 
-1. *ml_{data_name}.npy* - The edge features corresponding to the interactions (edges) in the the Temporal Graph..
+- *ml_{data_name}.npy* - The edge features corresponding to the interactions (edges) in the the Temporal Graph..
 
 
-3. *ml_{data_name}_node.npy* - The initialization node features of the Temporal Graph.
+- *ml_{data_name}_node.npy* - The initialization node features of the Temporal Graph.
 
 Example:
 
