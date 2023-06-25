@@ -39,7 +39,8 @@
 ## *News!!!*
 <br>
 
-- *25/6/2023 - We have updated the reference of BenchTemp on github.*
+- *25/6/2023 - We have updated [BenchTemp website](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/benchtemp.html).*
+- *24/6/2023 - We have updated the reference of BenchTemp on github.*
 
 ---
 
