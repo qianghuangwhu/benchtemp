@@ -16,6 +16,7 @@
 <!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
 ## Table of Contents
+  - [*News!!!*](#news)
   - [Overview](#overview)
   - [BenchTemp Framework](#benchtemp-framework)
   - [BenchTemp Pipeline](#benchtemp-pipeline)
