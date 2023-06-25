@@ -1,4 +1,4 @@
-# BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks
+<h1> BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks</h1>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![General badge](https://img.shields.io/badge/PyPI-v1.1.1-green.svg)]([mailto:jonnyhuanghnu@gmail.com](https://pypi.org/project/benchtemp/))
@@ -15,30 +15,34 @@
 
 <!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
-## Table of Contents
-  - [Overview](#overview)
-  - [BenchTemp Framework](#benchtemp-framework)
-  - [BenchTemp Pipeline](#benchtemp-pipeline)
-  - [BenchTemp Modules](#benchtemp-modules)
-  - [Installation](#installation)
-    - [Requirements](#requirements)
-    - [PyPI install](#pypi-install)
-  - [BenchTemp Reference](#benchtemp-reference)
-    - [*DataPreprocessor*](#datapreprocessor)
-    - [*TemporalGraph*](#temporalgraph)
-    - [*lp.DataLoader*](#lpdataloader)
-    - [*lp.RandEdgeSampler*](#lprandedgesampler)
-    - [*nc.DataLoader*](#ncdataloader)
-    - [*EarlyStopMonitor*](#earlystopmonitor)
-    - [*Evaluator*](#evaluator)
-  - [Call for Contributions](#call-for-contributions)
+<h2> Table of Contents</h2>
+
+- [Overview](#overview)
+- [BenchTemp Framework](#benchtemp-framework)
+- [BenchTemp Pipeline](#benchtemp-pipeline)
+- [BenchTemp Modules](#benchtemp-modules)
+- [Installation](#installation)
+  - [Requirements](#requirements)
+  - [PyPI install](#pypi-install)
+- [BenchTemp Reference](#benchtemp-reference)
+  - [*DataPreprocessor*](#datapreprocessor)
+  - [*TemporalGraph*](#temporalgraph)
+  - [*lp.DataLoader*](#lpdataloader)
+  - [*lp.RandEdgeSampler*](#lprandedgesampler)
+  - [*nc.DataLoader*](#ncdataloader)
+  - [*EarlyStopMonitor*](#earlystopmonitor)
+  - [*Evaluator*](#evaluator)
+- [Call for Contributions](#call-for-contributions)
 
 ---
 
-## <center><span style="color:red">*News!!!*</span>
-</center>
+<h2 style="text-align:center; color:red; font-style:italic;">News!!!</h2>
 
-- 25/6/2023 - *We have updated the reference of BenchTemp on github.*
+<br>
+<!-- ## <font color="red">*News!!!*</font> -->
+<!-- </center> -->
+
+- <h3 style="font-style:italic;"> 25/6/2023 - We have updated the reference of BenchTemp on github.</h3>
 
 ---
 
