@@ -16,7 +16,6 @@
 <!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
 <h2> Table of Contents</h2>
-
 - [Overview](#overview)
 - [BenchTemp Framework](#benchtemp-framework)
 - [BenchTemp Pipeline](#benchtemp-pipeline)
@@ -36,13 +35,10 @@
 
 ---
 
-<h2 style="text-align:center; color:red; font-style:italic;">News!!!</h2>
-
+## <code style="color : red">*News!!!*</code>
 <br>
-<!-- ## <font color="red">*News!!!*</font> -->
-<!-- </center> -->
 
-- <h3 style="font-style:italic;"> 25/6/2023 - We have updated the reference of BenchTemp on github.</h3>
+- *25/6/2023 - We have updated the reference of BenchTemp on github.*
 
 ---
 
