@@ -213,45 +213,6 @@ for i in range(args.n_runs):
         else:
             torch.save(cawn.state_dict(), cawn.get_checkpoint_path(epoch))
 
-        cawn.update_ngh_finder(
-            full_ngh_finder)  # remember that testing phase should always use the full neighbor finder
-        test_acc, test_ap, test_f1, test_auc = eval_one_epoch('Training --- test for {} nodes'.format(args.mode), cawn,
-                                                              test_rand_sampler, test_src_l, test_dst_l, test_ts_l,
-                                                              test_label_l, test_e_idx_l)
-        # test_new_new_acc, test_new_new_ap, test_new_new_auc, test_new_old_acc, test_new_old_ap, test_new_old_auc = [-1]*6
-        test_new_acc, test_new_ap, test_new_f1, test_new_auc = eval_one_epoch(
-            'Training --- test for {} nodes'.format(args.mode),
-            cawn, test_rand_sampler, test_src_new_l,
-            test_dst_new_l, test_ts_new_l,
-            test_label_new_l, test_e_idx_new_l)
-        test_new_new_acc, test_new_new_ap, test_new_new_f1, test_new_new_auc = eval_one_epoch(
-            'Training --- test for {} nodes'.format(args.mode), cawn, test_rand_sampler, test_src_new_new_l,
-            test_dst_new_new_l,
-            test_ts_new_new_l, test_label_new_new_l, test_e_idx_new_new_l)
-        test_new_old_acc, test_new_old_ap, test_new_old_f1, test_new_old_auc = eval_one_epoch(
-            'Training --- test for {} nodes'.format(args.mode), cawn, test_rand_sampler, test_src_new_old_l,
-            test_dst_new_old_l,
-            test_ts_new_old_l, test_label_new_old_l, test_e_idx_new_old_l)
-
-        logger.info(
-            'Training --- Transductive: Test statistics: {} Old nodes -- acc: {}, auc: {}, ap: {}'.format(args.mode,
-                                                                                                          test_acc,
-                                                                                                          test_auc,
-                                                                                                          test_ap))
-        logger.info(
-            'Training --- Inductive: Test statistics: {} New- nodes ---- acc: {}, auc: {}, ap: {}'.format(args.mode,
-                                                                                                          test_new_acc,
-                                                                                                          test_new_auc,
-                                                                                                          test_new_ap))
-        logger.info('Training --- Inductive: Test statistics: {} New-Old nodes - acc: {}, auc: {}, ap: {}'.format(args.mode,
-                                                                                                                  test_new_old_acc,
-                                                                                                                  test_new_old_auc,
-                                                                                                                  test_new_old_ap))
-        logger.info('Training --- Inductive: Test statistics: {} New-New nodes - acc: {}, auc: {}, ap: {}'.format(args.mode,
-                                                                                                                  test_new_new_acc,
-                                                                                                                  test_new_new_auc,
-                                                                                                                  test_new_new_ap))
-
     # final testing
     cawn.update_ngh_finder(full_ngh_finder)  # remember that testing phase should always use the full neighbor finder
 
