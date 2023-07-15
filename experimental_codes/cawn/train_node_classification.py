@@ -188,15 +188,6 @@ for i in range(args.n_runs):
         else:
             torch.save(cawn.state_dict(), cawn.get_checkpoint_path(epoch))
 
-
-        cawn.update_ngh_finder(
-            full_ngh_finder)  # remember that testing phase should always use the full neighbor finder
-        test_auc = eval_one_epoch_nc('Training --- test for {} nodes'.format(args.mode), cawn,
-                                                              test_rand_sampler, test_src_l, test_dst_l, test_ts_l,
-                                                              test_label_l, test_e_idx_l)
-
-        logger.info('test_auc: {}'.format(test_auc))
-
     # final testing
     cawn.update_ngh_finder(full_ngh_finder)  # remember that testing phase should always use the full neighbor finder
 
