@@ -206,12 +206,12 @@ for i in range(args.n_runs):
                                                        test_label_new_old_l, test_e_idx_new_old_l)
 
     logger.info(
-        'Training --- Transductive: Test statistics: {} Old nodes -- auc: {}, ap: {}'.format(args.mode, test_auc, test_ap))
-    logger.info('Training --- Inductive: Test statistics: {} New- nodes ---- auc: {}, ap: {}'.format(args.mode, test_new_auc,
+        'Test --- Transductive: Test statistics: {} Old nodes -- auc: {}, ap: {}'.format(args.mode, test_auc, test_ap))
+    logger.info('Test --- Inductive: Test statistics: {} New- nodes ---- auc: {}, ap: {}'.format(args.mode, test_new_auc,
                                                                                         test_new_ap))
-    logger.info('Training --- Inductive: Test statistics: {} New-Old nodes - auc: {}, ap: {}'.format(args.mode, test_new_old_auc,
+    logger.info('Test --- Inductive: Test statistics: {} New-Old nodes - auc: {}, ap: {}'.format(args.mode, test_new_old_auc,
                                                                                         test_new_old_ap))
-    logger.info('Training --- Inductive: Test statistics: {} New-New nodes - auc: {}, ap: {}'.format(args.mode, test_new_new_auc,
+    logger.info('Test --- Inductive: Test statistics: {} New-New nodes - auc: {}, ap: {}'.format(args.mode, test_new_new_auc,
                                                                                         test_new_new_ap))
     nn_test_auc_list.append(test_new_auc)
     nn_test_ap_list.append(test_new_ap)

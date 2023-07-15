@@ -130,7 +130,7 @@ for i in range(args.n_runs):
                                          val_ts_l, val_label_l, val_e_idx_l)
         total_epoch_time = time.time() - start_epoch
         logger.info('epoch: {} took {:.2f}s'.format(epoch, total_epoch_time))
-        logger.info('train auc: {}'.format(val_auc))
+        logger.info('val auc: {}'.format(val_auc))
 
         if epoch == 0:
             checkpoint_dir = '/'.join(model.get_checkpoint_path(0).split('/')[:-1])
