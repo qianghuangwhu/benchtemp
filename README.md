@@ -16,6 +16,8 @@
 <!-- [![PyPI version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=py&r=r&ts=1683906897&type=6e&v=1.1.1&x2=0)]() -->
 
 ## Table of Contents
+- [BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks](#benchtemp-a-general-benchmark-for-evaluating-temporal-graph-neural-networks)
+  - [Table of Contents](#table-of-contents)
   - [*News!!!*](#news)
   - [Overview](#overview)
   - [BenchTemp Framework](#benchtemp-framework)
@@ -24,6 +26,9 @@
   - [Installation](#installation)
     - [Requirements](#requirements)
     - [PyPI install](#pypi-install)
+  - [Usage Example](#usage-example)
+    - [*Dynamic Link Prediction*](#dynamic-link-prediction)
+    - [*Dynamic Node  Classification*](#dynamic-node--classification)
   - [BenchTemp Reference](#benchtemp-reference)
     - [*DataPreprocessor*](#datapreprocessor)
     - [*TemporalGraph*](#temporalgraph)
@@ -104,6 +109,93 @@ Please ensure that you have installed the following dependencies:
 
 ```bash
 pip install benchtemp 
+```
+
+---
+
+## Usage Example
+After installing benchtemp PyPI library, you can evaluating your TGNN models on dynamic link prediction task and dynamic node  classification task easily and quickly. For example:
+
+### *Dynamic Link Prediction*
+benchtemp provides *lp.DataLoader, lp.RandEdgeSampler， EarlyStopMonitor, Evaluator* for dynamic link prediction task. Users can evaluating their TGNN models by those components provided by benchtemp. See ***train_link_prediction.py*** in folder [*experimental_codes*](https://github.com/qianghuangwhu/benchtemp/tree/master/experimental_codes) for details.
+
+Example Framework:
+
+```python
+# please import our benchtemp library
+import benchtemp as bt
+
+# For example, if you are training , you should create a training  RandEdgeSampler based on the training dataset.
+data = bt.lp.DataLoader(dataset_path="./data/", dataset_name='mooc')
+
+# dataloader for dynamic link prediction task
+
+node_features, edge_features, full_data, train_data, val_data, test_data, new_node_val_data, new_node_test_data, new_old_node_val_data, new_old_node_test_data, new_new_node_val_data, new_new_node_test_data, unseen_nodes_num = data.load()
+
+
+train_rand_sampler = bt.lp.RandEdgeSampler(train_data.sources, train_data.destinations)
+
+monitor = bt.EarlyStopMonitor()
+
+model = TGNN(parameters)
+...
+for epoch in range(args.epochs):
+    ...
+    # sample an equal amount of negatives to the positive interactions.
+    size = len(train_data)
+    _, negatives_batch = train_rand_sampler.sample(size)
+    ...
+    ...
+    pre_positive, pre_negative = model(positive_batch,negatives_batch)
+    loss = loss_function(pre_positive, pre_negative, labels)
+    ...
+    ...
+    val_ap = model(val_data)
+    if monitor.early_stop_check(val_ap):
+      break
+...
+
+# testing
+pre = model(test_data)
+results = bt.evaluator(pre, labels)
+```
+### *Dynamic Node  Classification*
+benchtemp provides *nc.DataLoader, EarlyStopMonitor, Evaluator* for dynamic node  classification. See ***train_node_classification.py*** in folder [*experimental_codes*](https://github.com/qianghuangwhu/benchtemp/tree/master/experimental_codes)   for details. 
+
+```python
+# please import our benchtemp library
+import benchtemp as bt
+
+# For example, if you are training , you should create a training  RandEdgeSampler based on the training dataset.
+data = bt.nc.DataLoader(dataset_path="./data/", dataset_name='mooc')
+
+# dataloader for dynamic node  classification task
+
+node_features, edge_features, full_data, train_data, val_data, test_data, new_node_val_data, new_node_test_data, new_old_node_val_data, new_old_node_test_data, new_new_node_val_data, new_new_node_test_data, unseen_nodes_num = data.load()
+
+
+monitor = bt.EarlyStopMonitor()
+
+model = TGNN(parameters)
+...
+for epoch in range(args.epochs):
+    ...
+    # sample an equal amount of negatives to the positive interactions.
+    size = len(train_data)
+    ...
+    ...
+    pre_positive, pre_negative = model(positive_batch,negatives_batch)
+    loss = loss_function(pre_positive, pre_negative, labels)
+    ...
+    ...
+    val_ap = model(val_data)
+    if monitor.early_stop_check(val_ap):
+      break
+...
+
+# testing
+pre = model(test_data)
+results = bt.evaluator(pre, labels)
 ```
 
 ---
