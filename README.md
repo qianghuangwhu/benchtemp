@@ -137,6 +137,7 @@ train_rand_sampler = bt.lp.RandEdgeSampler(train_data.sources, train_data.destin
 
 monitor = bt.EarlyStopMonitor()
 
+# Users' own TGNN models or SOTA TGNN models
 model = TGNN(parameters)
 ...
 for epoch in range(args.epochs):
@@ -174,8 +175,7 @@ data = bt.nc.DataLoader(dataset_path="./data/", dataset_name='mooc')
 node_features, edge_features, full_data, train_data, val_data, test_data, new_node_val_data, new_node_test_data, new_old_node_val_data, new_old_node_test_data, new_new_node_val_data, new_new_node_test_data, unseen_nodes_num = data.load()
 
 
-monitor = bt.EarlyStopMonitor()
-
+# Users' own TGNN models or SOTA TGNN models
 model = TGNN(parameters)
 ...
 for epoch in range(args.epochs):
