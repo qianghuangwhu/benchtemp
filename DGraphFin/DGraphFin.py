@@ -1,10 +1,8 @@
 import numpy as np
 import pandas as pd
 
-# 读取npz文件
 data = np.load('dgraphfin.npz')
 
-# 查看npz文件中包含的数组名
 print("Arrays in the npz file:", list(data.keys()))
 
 node_features = data["x"]
@@ -51,10 +49,6 @@ nodes_num = len(np.unique(all_users))
 print("nodes_num", nodes_num)
 
 
-
-# end_nodes_labels_dynamic = node_labels[end_nodes]
-# print(end_nodes_labels_dynamic.shape)
-
 DGraphFin = pd.DataFrame({
     'u': start_nodes,
     'i': end_nodes,
@@ -77,7 +71,6 @@ print(is_sorted_descending(DGraphFin["ts"].values))
 edge_indexs = np.arange(1, edges_num+1)
 DGraphFin['idx'] =  edge_indexs
 
-# 1,000,000 edges
 DGraphFin_new = DGraphFin
 interaction_num = len(DGraphFin_new.u)
 print(interaction_num)
@@ -111,7 +104,6 @@ print("type(node_features_new.dtype)", node_features_new.dtype)
 np.save(node_features_new_path, node_features_new)
 
 edge_types_sorted = DGraphFin_new["edge_label"].values
-# num_classes = len(np.unique(edge_types_sorted))
 one_hot_encoded = np.eye(11)[edge_types_sorted - 1]
 empty = np.zeros(one_hot_encoded.shape[1])[np.newaxis, :]
 one_hot_encoded = np.vstack([empty, one_hot_encoded])
