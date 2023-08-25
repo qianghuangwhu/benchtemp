@@ -64,7 +64,6 @@ print(total_nums)
 max_idx = max(YoutubeReddit.u.max(), YoutubeReddit.i.max())
 print("max_idx", max_idx)
 node_features = np.zeros((max_idx + 1, 172))
-# node_features = np.zeros((total_nums + 1, 172))
 node_features_path = "./ml_YoutubeRedditLarge_node.npy"
 np.save(node_features_path, node_features)
 
@@ -73,11 +72,8 @@ np.save(node_features_path, node_features)
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 
-# 示例的字符串数组
-# 初始化TF-IDF向量化器
-vectorizer = TfidfVectorizer(max_features=172)  # 设置维度为20
 
-# 将字符串数组转换为TF-IDF向量
+vectorizer = TfidfVectorizer(max_features=172)  
 edge_features = vectorizer.fit_transform(YoutubeReddit["author"].values).toarray()
 print("edge_features.shape")
 print(edge_features.shape)
