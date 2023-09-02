@@ -44,6 +44,10 @@
 ## *News!!!*
 <br>
 
+- *2/9/2023 - All datasets have been hosted on the open-source platform zenodo (https://zenodo.org/) with a Digital Object Identifier (DOI) 10.5281/zenodo.8267846 (https://zenodo.org/record/8267846).*
+
+- *20/8/2023 - We have added six datasets **(eBay-Small, YouTubeReddit-Small, eBay-Large, DGraphFin, YouTubeReddit-Large, and Taobao-Large)**, including **four large-scale datasets** (eBay-Large, DGraphFin, YouTubeReddit-Large, and Taobao-Large).*
+
 - *12/7/2023 - We have uploaded experimental codes in folder **experimental_codes**.*
 - *25/6/2023 - We have updated [BenchTemp website](https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/benchtemp.html).*
 - *24/6/2023 - We have updated the reference of BenchTemp on github.*
