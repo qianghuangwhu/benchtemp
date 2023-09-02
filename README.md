@@ -56,14 +56,17 @@
 **BenchTemp** is a general Benchmark Python Library for evaluating Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
 **BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BenchTempLoss, BenchTempOptimizer, and Leaderboard**) for evaluating Temporal Graph Neural Networks on both link prediction task and node classification task.
 
-- The paper for this open source project is <a href="https://openreview.net/forum?id=rnZm2vQq31" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
-- The BenchTemp PyPI Website is <a href="https://pypi.org/project/benchtemp/" target="_blank">Here</a>.
+- Paper - <a href="https://openreview.net/forum?id=rnZm2vQq31" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
+<!-- - The BenchTemp PyPI Website is <a href="https://pypi.org/project/benchtemp/" target="_blank">Here</a>.
 
-- The GitHub of BenchTemp project is <a href="https://github.com/qianghuangwhu/benchtemp" target="_blank">Here</a>. 
+- The GitHub of BenchTemp project is <a href="https://github.com/qianghuangwhu/benchtemp" target="_blank">Here</a>.  -->
+- Datasets - https://zenodo.org/record/8267846
+- Code - https://github.com/qianghuangwhu/benchtemp
+- Leaderboards - https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/ 
 
-- The datasets are <a href="https://drive.google.com/drive/folders/1HKSFGEfxHDlHuQZ6nK4SLCEMFQIOtzpz?usp=sharing" target="_blank">Here</a>. 
-
-- The leaderboards website for Temporal Graph Neural Networks on both link prediction task and node classification task is <a href="https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/" target="_blank">Here</a>.
+<!-- - Datasets - <a href="https://drive.google.com/drive/folders/1HKSFGEfxHDlHuQZ6nK4SLCEMFQIOtzpz?usp=sharing" target="_blank">Here</a>.  -->
+<!-- 
+- The leaderboards website for Temporal Graph Neural Networks on both link prediction task and node classification task is <a href="https://my-website-6gnpiaym0891702b-1257259254.tcloudbaseapp.com/" target="_blank">Here</a>. -->
 - The source codes for evaluating existing Temporal Graph Neural Networks based on BenchTemp are in folder *experimental_codes*.
 
 ---
