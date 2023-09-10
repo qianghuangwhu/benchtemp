@@ -138,6 +138,9 @@ parser.add_argument('--bipartite', action='store_true', help='Whether the graph 
 
 args = parser.parse_args()
 
-# rename_column()
+# Run only once
+rename_column()
 
 run(args.data, bipartite=args.bipartite)
+
+# NOTE: Running Command: python Myket.py --data myket_with_features_benchtemp --bipartite
