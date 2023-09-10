@@ -24,8 +24,6 @@ THE SOFTWARE.
 
 # TODO: Myket Dataset. This is the code of formatting the Myket data to align with the requirements of BenchTemp.
 
-
-
 import pandas as pd
 import numpy as np
 
