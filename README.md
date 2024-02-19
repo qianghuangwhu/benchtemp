@@ -44,7 +44,7 @@
 ## *News!!!*
 <br>
 
-- *5/1/2024 - The Myket Dataset used in paper (https://arxiv.org/abs/2308.06862) has been added to BenchTemp.*
+- *5/1/2024 - The Myket Dataset used in paper (https://arxiv.org/abs/2308.06862) has been added to BenchTemp. Data preprocess code at preprocess/Myket.py*
 
 - *2/9/2023 - All datasets have been hosted on the open-source platform zenodo (https://zenodo.org/) with a Digital Object Identifier (DOI) 10.5281/zenodo.8267846 (https://zenodo.org/record/8267846).*
 
