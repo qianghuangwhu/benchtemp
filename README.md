@@ -44,7 +44,7 @@
 ## *News!!!*
 <br>
 
-- *The Myket Dataset used in [https://arxiv.org/abs/2308.06862]{https://arxiv.org/abs/2308.06862} has been added to BenchTemp.*
+- *The Myket Dataset used in [paper]{https://arxiv.org/abs/2308.06862} has been added to BenchTemp.*
 
 - *2/9/2023 - All datasets have been hosted on the open-source platform zenodo (https://zenodo.org/) with a Digital Object Identifier (DOI) 10.5281/zenodo.8267846 (https://zenodo.org/record/8267846).*
 
