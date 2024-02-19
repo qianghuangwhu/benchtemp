@@ -44,6 +44,8 @@
 ## *News!!!*
 <br>
 
+- *The Myket Dataset used in [https://arxiv.org/abs/2308.06862]{https://arxiv.org/abs/2308.06862} has been added to BenchTemp.*
+
 - *2/9/2023 - All datasets have been hosted on the open-source platform zenodo (https://zenodo.org/) with a Digital Object Identifier (DOI) 10.5281/zenodo.8267846 (https://zenodo.org/record/8267846).*
 
 - *20/8/2023 - We have added six datasets **(eBay-Small, YouTubeReddit-Small, eBay-Large, DGraphFin, YouTubeReddit-Large, and Taobao-Large)**, including **four large-scale datasets** (eBay-Large, DGraphFin, YouTubeReddit-Large, and Taobao-Large).*
@@ -60,7 +62,7 @@
 **BenchTemp** is a general Benchmark Python Library for evaluating Temporal Graph Neural Networks (TGNNs) quickly and efficiently on various workloads. 
 **BenchTemp** provides **Benchmark Datasets**, and unified pipelines (**DataPreprocessor, DataLoader EdgeSampler, Evaluator, EarlyStopMonitor, BenchTempLoss, BenchTempOptimizer, and Leaderboard**) for evaluating Temporal Graph Neural Networks on both link prediction task and node classification task.
 
-- Paper - <a href="https://openreview.net/forum?id=rnZm2vQq31" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
+- Paper - <a href="https://arxiv.org/abs/2308.16385" target="_blank">*BenchTemp: A General Benchmark for Evaluating Temporal Graph Neural Networks*</a>.
 <!-- - The BenchTemp PyPI Website is <a href="https://pypi.org/project/benchtemp/" target="_blank">Here</a>.
 
 - The GitHub of BenchTemp project is <a href="https://github.com/qianghuangwhu/benchtemp" target="_blank">Here</a>.  -->
